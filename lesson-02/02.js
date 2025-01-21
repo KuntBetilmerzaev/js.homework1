@@ -7,21 +7,17 @@
 * Для успешного прохождения тестов не меняйте названия переменных!
 */
 
-let dice1 = Math.floor(Math.random() * 6)
-let dice2 = Math.floor(Math.random() * 6)
-let isWinningDouble // your code
 
-console.log('На первом кубике выпало: ' + (dice1 + 1))
-console.log('На втором кубике выпало: ' + (dice2 + 1))
+const dice1 = Math.floor(Math.random() * 6) + 1;
+const dice2 = Math.floor(Math.random() * 6) + 1;
 
-if (dice1 === dice2 && (+dice1 + 1) > 3 && (+dice2 + 1) > 3) {
-    console.log('You win');
-    isWinningDouble = true
-} else {
-    console.log('You lose')
-    isWinningDouble = true
-}
 
+const isWinningDouble = (dice1 === dice2) && (dice1 > 3);
+
+
+console.log(`Кубик 1: ${dice1}`);
+console.log(`Кубик 2: ${dice2}`);
+console.log(`Выигрышный дубль: ${isWinningDouble}`);
 
 
 
