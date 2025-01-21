@@ -19,7 +19,6 @@ if (dice1 === dice2 && (+dice1 + 1) > 3 && (+dice2 + 1) > 3) {
     isWinningDouble = true
 } else {
     console.log('You lose')
-    isWinningDouble = false
 }
 
 
