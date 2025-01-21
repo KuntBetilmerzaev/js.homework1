@@ -1,14 +1,12 @@
+const isAdmin = false
+const isVerifiedUser = true
+const hasSpecialPermission = true
+const hasTemporaryPass = false
 
-const dice1 = Math.floor(Math.random() * 6) + 1;
-const dice2 = Math.floor(Math.random() * 6) + 1;
+let isAccess
 
-
-const isWinningDouble = (dice1 === dice2) && (dice1 > 3);
-
-
-console.log(`Кубик 1: ${dice1}`);
-console.log(`Кубик 2: ${dice2}`);
-console.log(`Выигрышный дубль: ${isWinningDouble}`);
-
-
+// your code
+if (isAdmin === true && isVerifiedUser && (hasSpecialPermission || hasTemporaryPass === true)) {
+    console.log(isAccess)
+}
 
