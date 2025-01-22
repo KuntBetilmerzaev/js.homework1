@@ -1,12 +1,9 @@
-const isAdmin = false
-const isVerifiedUser = true
-const hasSpecialPermission = true
-const hasTemporaryPass = false
+function calculateAverage(number1, number2) {
+    let arifmet = (number1 + number2) / 2
+    return arifmet
 
-let isAccess
-
-// your code
-if (isAdmin === true && isVerifiedUser && (hasSpecialPermission || hasTemporaryPass === true)) {
-    console.log(isAccess)
 }
+
+console.log(calculateAverage(2, 3))
+
 
