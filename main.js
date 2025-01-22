@@ -1,9 +1,7 @@
-function calculateAverage(number1, number2) {
-    let arifmet = (number1 + number2) / 2
-    return arifmet
-
+function findLargest(number1, number2, number3) {
+    let maxNum = Math.max(number1, number2, number3)
+    return maxNum
 }
 
-console.log(calculateAverage(2, 3))
-
+console.log(findLargest(5, 4, 3))
 
