@@ -1,4 +1,16 @@
-let score = [1, 12, 343, 23, 343]
 
-const maxValueSpread = score[Math.max(...array)];
-console.log('Самые большие значения, номера: ' + '#' + maxValueSpread); 
+
+let i
+
+function includesElement(array, element) {
+    for (i = 0; i < array.length; i++) {
+        if (element === array[i]) {
+            return true
+        } 
+            
+        
+    } 
+    return false
+}
+
+console.log(includesElement([1, 2, 3], 2));
