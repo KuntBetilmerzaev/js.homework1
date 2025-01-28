@@ -1,16 +1,10 @@
 
 
-let i
-
-function includesElement(array, element) {
-    for (i = 0; i < array.length; i++) {
-        if (element === array[i]) {
-            return true
-        } 
-            
-        
-    } 
-    return false
+function doubleEachCharacter(str) {
+    return str.split('').map(char => char.repeat(2)).join('')
+    
 }
 
-console.log(includesElement([1, 2, 3], 2));
+console.log(doubleEachCharacter('hello'));
+
+
