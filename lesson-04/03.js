@@ -27,14 +27,12 @@ function findCommonElements(arrayy1, arrayy2) {
             if (element === arrayy2[j]) {
                 commonElements.push(element);
                 break;
-            } else {
-                return commonElements
             }
         }
     }
     
-    console.log(commonElements); 
+    return commonElements
 }
     
+console.log(findCommonElements([1, 2, 3,4], [2, 3, 5,6]))
 
-findCommonElements([1, 2, 3], [4, 4, 4])
