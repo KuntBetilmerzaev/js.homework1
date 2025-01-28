@@ -18,6 +18,7 @@ function findCommonElements(arrayy1, arrayy2) {
 }
     
 
-findCommonElements([1, 2, 3], [2, 3, 4])
+
+findCommonElements([1, 2, 3], [4, 4, 4])
 
 
