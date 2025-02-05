@@ -18,5 +18,5 @@ const game = {
 
 
 
-console.log(game.addResource(game.resources.gold, 150));
+
 
