@@ -1,16 +1,21 @@
-const game = {
-  resources: {
-    gold: 250,
-    lumber: 100,
-  },
-  addResource(resource, amount) {
-    if (this.resources[resource]) {
-      this.resources[resource] += amount;
-      console.log("New number: ", this.resources[resource]);
-    } else {
-      console.log("Invalid resource");
+const gallery = {
+  'Mona Lisa': 'Leonardo da Vinci',
+  'Starry Night': 'Vincent van Gogh',
+  'The Scream': 'Edvard Munch',
+}
+
+function updateGallery(gallery, galleryKey, newKey) {
+  for (let key in gallery) {
+    if (galleryKey !== key) {
+      gallery[galleryKey] = newKey
+    } else if (galleryKey === key) {
+      gallery[galleryKey] = newKey
     }
   }
-};
+}
 
-game.addResource('gold', 100);
+
+updateGallery(gallery, 'Mona Lisa', 'Leonardo da Vinci, 1503-1506');
+updateGallery(gallery, 'The Persistence of Memory', 'Salvador Dali');
+
+console.log(gallery);
