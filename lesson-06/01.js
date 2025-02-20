@@ -17,3 +17,15 @@ const WEB_TECH_IMAGES = [
   'https://production-it-incubator.s3.eu-central-1.amazonaws.com/file-manager/Image/c8a1f4a6-1337-4899-bdfd-a8c9c7bb806a_css-magic-logo.jpg',
   'https://production-it-incubator.s3.eu-central-1.amazonaws.com/file-manager/Image/784380b9-6937-42a6-bdfe-869835820234_html-magic-logo.jpg',
 ]
+
+const button1 = document.getElementById("prev-button")
+const button2 = document.getElementById("next-button")
+const image = document.getElementById("web-tech-image");
+
+button1.onclick = function() {
+  image.setAttribute('src', WEB_TECH_IMAGES[1]);
+};
+
+button2.onclick = function() {
+  image.setAttribute('src', WEB_TECH_IMAGES[2]);
+};
