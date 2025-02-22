@@ -4,7 +4,13 @@
  */
 
 function isNumeric(str) {
-  return !isNaN(+str);
+  
+  const num = Number(str)
+  if (str === " ") {
+    return false
+  }
+  return Number.isFinite(num)
+  
 }
 
 
@@ -13,4 +19,4 @@ console.log(isNumeric("123")) // Ожидаемый результат: true
 console.log(isNumeric("12.3")) // Ожидаемый результат: true
 console.log(isNumeric("123abc")) // Ожидаемый результат: false
 console.log(isNumeric("abc")) // Ожидаемый результат: false
-// console.log(isNumeric(" ")) // Ожидаемый результат: false
+console.log(isNumeric(" ")) // Ожидаемый результат: false
