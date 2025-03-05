@@ -25,86 +25,82 @@
 - 🧙‍♂️ Для выполнения этого задания нужно познакомиться с браузерными функциями setInterval (https://doka.guide/js/setinterval/) и clearInterval(https://doka.guide/js/clearinterval/). Они очень похоже на setTimeout и clearTimeout.
  */
 
-const startButton = document.getElementById('start')
-const cancelButton = document.getElementById('cancel')
-const countdownDisplay = document.getElementById('countdown')
+// const startButton = document.getElementById('start')
+// const cancelButton = document.getElementById('cancel')
+// const countdownDisplay = document.getElementById('countdown')
 
-let isTimerStarted = false
-let timerId
-
-startButton.addEventListener('click', () => {
-  if (isTimerStarted) {
-    return; // Если таймер уже запущен, ничего не делаем
-  }
-  let counter = 3
-  isTimerStarted = true; // Флаг, показывающий, что таймер запущен
-
-  timerId = setInterval(() => {
-    countdownDisplay.textContent = counter
-    if (counter > 0) {
-      counter--
-    } else {
-      countdownDisplay.textContent = '🚀'
-      clearInterval(timerId)
-      isTimerStarted
-    }
-  }, 1000)
-  
-})
-
-
-
-function stopCountdown() {
-  if (timerId) {
-      clearInterval(timerId); 
-      countdownDisplay.textContent = 'Отменено'; 
-      isTimerStarted = false; 
-  }
-}
-
-cancelButton.addEventListener('click', stopCountdown);
-
-
-
-
-
-// cancelButton.addEventListener('click', () => {
-//   clearInterval(timerId)
-//   if (!isTimerStarted) {
-//   countdownDisplay.textContent = "Отменено"
-//   }
-// })
-
-
-// let isTimerStarted = false;
-// let timerId;
+// let isTimerStarted = false
+// let timerId
 
 // startButton.addEventListener('click', () => {
 //   if (isTimerStarted) {
 //     return; // Если таймер уже запущен, ничего не делаем
 //   }
-  
+//   let counter = 3
 //   isTimerStarted = true; // Флаг, показывающий, что таймер запущен
-//   let counter = 3;
 
 //   timerId = setInterval(() => {
-//     countdownDisplay.textContent = counter;
+//     countdownDisplay.textContent = counter
 //     if (counter > 0) {
-//       counter--;
+//       counter--
 //     } else {
-//       countdownDisplay.textContent = '🚀';
-//       clearInterval(timerId);
-//       isTimerStarted = false; // Таймер завершил работу, сбрасываем флаг
+//       countdownDisplay.textContent = '🚀'
+//       clearInterval(timerId)
+//       isTimerStarted
 //     }
-//   }, 1000);
-// });
+//   }, 1000)
+  
+// })
+
+
 
 // function stopCountdown() {
 //   if (timerId) {
-//     clearInterval(timerId); // Останавливаем таймер
-//     countdownDisplay.textContent = 'Отменено'; // Показываем, что отсчёт отменён
-//     isTimerStarted = false; // Отмечаем, что таймер остановлен
+//       clearInterval(timerId); 
+//       countdownDisplay.textContent = 'Отменено'; 
+//       isTimerStarted = false; 
 //   }
 // }
 
 // cancelButton.addEventListener('click', stopCountdown);
+
+
+
+
+
+const startButton = document.getElementById('start');
+const cancelButton = document.getElementById('cancel');
+const countdownDisplay = document.getElementById('countdown');
+
+let isTimerStarted = false;
+let timerId;
+
+startButton.addEventListener('click', () => {
+  if (isTimerStarted) {
+    return; // Если таймер уже запущен, ничего не делаем
+  }
+  
+  isTimerStarted = true; // Флаг, показывающий, что таймер запущен
+  let counter = 3;
+
+  timerId = setInterval(() => {
+    countdownDisplay.textContent = counter;
+    if (counter > 0) {
+      counter--;
+    } else {
+      countdownDisplay.textContent = '🚀';
+      clearInterval(timerId);
+      isTimerStarted = false; // Таймер завершил работу, сбрасываем флаг
+    }
+  }, 1000);
+});
+
+function stopCountdown() {
+  if (timerId) {
+    clearInterval(timerId); // Останавливаем таймер
+    countdownDisplay.textContent = 'Отменено'; // Показываем, что отсчёт отменён
+    isTimerStarted = false; // Отмечаем, что таймер остановлен
+  }
+}
+
+cancelButton.addEventListener('click', stopCountdown);
