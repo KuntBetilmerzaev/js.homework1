@@ -33,7 +33,12 @@ let isTimerStarted = false
 let timerId
 
 startButton.addEventListener('click', () => {
+  if (isTimerStarted) {
+    return; // Если таймер уже запущен, ничего не делаем
+  }
   let counter = 3
+  isTimerStarted = true; // Флаг, показывающий, что таймер запущен
+
   timerId = setInterval(() => {
     countdownDisplay.textContent = counter
     if (counter > 0) {
@@ -44,7 +49,24 @@ startButton.addEventListener('click', () => {
       isTimerStarted
     }
   }, 1000)
+  
 })
+
+
+
+function stopCountdown() {
+  if (timerId) {
+      clearInterval(timerId); 
+      countdownDisplay.textContent = 'Отменено'; 
+      isTimerStarted = false; 
+  }
+}
+
+cancelButton.addEventListener('click', stopCountdown);
+
+
+
+
 
 // cancelButton.addEventListener('click', () => {
 //   clearInterval(timerId)
@@ -53,12 +75,36 @@ startButton.addEventListener('click', () => {
 //   }
 // })
 
-function stopCountdown() {
-  if (timerId) {
-      clearInterval(timerId); // Останавливаем таймер
-      countdownDisplay.textContent = 'Отменено'; // Показываем, что отсчёт отменён
-      isTimerStarted = false; // Отмечаем, что таймер остановлен
-  }
-}
 
-cancelButton.addEventListener('click', stopCountdown);
+// let isTimerStarted = false;
+// let timerId;
+
+// startButton.addEventListener('click', () => {
+//   if (isTimerStarted) {
+//     return; // Если таймер уже запущен, ничего не делаем
+//   }
+  
+//   isTimerStarted = true; // Флаг, показывающий, что таймер запущен
+//   let counter = 3;
+
+//   timerId = setInterval(() => {
+//     countdownDisplay.textContent = counter;
+//     if (counter > 0) {
+//       counter--;
+//     } else {
+//       countdownDisplay.textContent = '🚀';
+//       clearInterval(timerId);
+//       isTimerStarted = false; // Таймер завершил работу, сбрасываем флаг
+//     }
+//   }, 1000);
+// });
+
+// function stopCountdown() {
+//   if (timerId) {
+//     clearInterval(timerId); // Останавливаем таймер
+//     countdownDisplay.textContent = 'Отменено'; // Показываем, что отсчёт отменён
+//     isTimerStarted = false; // Отмечаем, что таймер остановлен
+//   }
+// }
+
+// cancelButton.addEventListener('click', stopCountdown);
